@@ -1,23 +1,22 @@
-'use strict';
-
 var nameVar = 'Orvar';
 var nameVar = 'Hej2';
 
 console.log('nameVar', nameVar);
 
-var nameLet = 'Jen';
+let nameLet = 'Jen';
 nameLet = 'Jenna';
 
 console.log(nameLet);
 
-var nameConst = 'Frippe';
+const nameConst = 'Frippe';
 
 console.log('nameConst', nameConst);
 
-function getPetName() {
-    var petName = 'Hallie';
+function getPetName(){
+    let petName = 'Hallie';
     return petName;
 }
+
 
 getPetName();
 
