@@ -1,24 +1,40 @@
 'use strict';
 
-var nameVar = 'Orvar';
-var nameVar = 'Hej2';
+var add = function add(a, b) {
+    return a + b;
+};
 
-console.log('nameVar', nameVar);
+console.log(add(55, 44));
 
-var nameLet = 'Jen';
-nameLet = 'Jenna';
+var user = {
+    name: 'Simon',
+    cities: ['Gothenburg', 'Stockholm', 'Dublin'],
+    printPlacesLived: function printPlacesLived() {
+        var _this = this;
 
-console.log(nameLet);
+        console.log(this.name);
+        console.log(this.cities);
 
-var nameConst = 'Frippe';
+        var cityMessages = this.cities.map(function (city) {
+            return _this.name + ' has lived in ' + city;
+        });
 
-console.log('nameConst', nameConst);
+        return cityMessages;
+    }
+};
 
-function getPetName() {
-    var petName = 'Hallie';
-    return petName;
-}
+console.log(user.printPlacesLived());
 
-getPetName();
+var multiplier = {
+    numbers: [1, 2, 3, 4, 5],
+    multiplier: 10,
+    multiply: function multiply() {
+        var _this2 = this;
 
-console.log(petName);
+        return this.numbers.map(function (number) {
+            return number * _this2.multiplier;
+        });
+    }
+};
+
+console.log(multiplier.multiply());
