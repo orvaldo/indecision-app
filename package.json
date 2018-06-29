@@ -1,12 +1,19 @@
 {
-  "name": "indecision-app",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/orvaldo/indecision-app.git",
-  "author": "son",
-  "license": "MIT",
-  "dependencies": {
-    "babel-preset-env": "1.5.2",
-    "babel-preset-react": "6.24.1"
-  }
+    "name": "indecision-app",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/orvaldo/indecision-app.git",
+    "author": "son",
+    "license": "MIT",
+    "dependencies": {
+        "babel-preset-env": "1.5.2",
+        "babel-preset-react": "6.24.1",
+        "eslint-plugin-react": "^7.10.0",
+        "flat": "^4.0.0"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "eslint": "^5.0.1",
+        "eslint-config-google": "^0.9.1"
+    }
 }

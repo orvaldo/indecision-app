@@ -1,0 +1,17 @@
+{
+    "extends": ["google", "plugin:react/recommended"],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "rules": {
+        "valid-jsdoc": "off",
+        "require-jsdoc": "off",
+        "react/jsx-uses-vars": 2,
+        "react/react-in-jsx-scope": "false",
+        "react/prop-types": "false"
+    }
+}
