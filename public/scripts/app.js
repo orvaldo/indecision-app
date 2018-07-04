@@ -36,18 +36,18 @@ var IndecisionApp = function (_React$Component) {
         key: 'handlePick',
         value: function handlePick() {
             var rand = Math.floor(Math.random() * this.state.options.length);
-            console.log(this.state.options[rand]);
+            alert(this.state.options[rand]);
         }
     }, {
         key: 'handleAddOption',
         value: function handleAddOption(option) {
             if (!option) {
                 return 'Enter a valid value to add item';
-            } else if (this.state.options.indexOf(option) != -1) {
+            } else if (this.state.options.indexOf(option) > -1) {
                 return 'This option already exists';
             }
             this.setState(function (prevState) {
-                return { options: prevState.options.concat([option]) };
+                return { options: prevState.options.concat(option) };
             });
         }
     }, {

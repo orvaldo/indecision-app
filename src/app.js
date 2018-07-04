@@ -15,16 +15,16 @@ class IndecisionApp extends React.Component {
     }
     handlePick() {
         const rand = Math.floor(Math.random() * this.state.options.length);
-        console.log(this.state.options[rand]);
+        alert(this.state.options[rand]);
     }
     handleAddOption(option) {
         if (!option) {
             return 'Enter a valid value to add item';
-        } else if (this.state.options.indexOf(option) != -1) {
+        } else if (this.state.options.indexOf(option) > -1) {
             return 'This option already exists';
         }
         this.setState((prevState) => {
-            return {options: prevState.options.concat([option])};
+            return {options: prevState.options.concat(option)};
         });
     }
     render() {
