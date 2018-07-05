@@ -4,6 +4,7 @@ import Options from './Options';
 import Action from './Action';
 import Header from './Header';
 import OptionModal from './OptionModal';
+import baseStyles from '../base-styles';
 
 class IndecisionApp extends React.Component {
     state = {
@@ -64,6 +65,7 @@ class IndecisionApp extends React.Component {
 
     render() {
         const subtitle = 'Put your life in the hands of a computer';
+        baseStyles();
         return (
             <div>
                 <Header subtitle={subtitle} />

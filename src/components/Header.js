@@ -17,6 +17,7 @@ const StyledSubtitle = styled.h2`
     color: #a5afd7;
     font-size: 1.6rem;
     font-weight: 500;
+    margin: 0;
 `;
 
 const Header = (props) => (
