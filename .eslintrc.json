@@ -10,11 +10,13 @@
         "sourceType": "module"
     },
     "rules": {
+        "no-invalid-this": 0,
+        "babel/no-invalid-this": 1,
         "valid-jsdoc": "off",
         "require-jsdoc": "off",
         "react/jsx-uses-vars": 2,
-        "react/react-in-jsx-scope": 0,
-        "react/prop-types": "false",
+        "react/react-in-jsx-scope": 2,
+        "react/prop-types": 0,
         "babel/new-cap": 1,
         "babel/object-curly-spacing": 1,
         "babel/semi": 1,
