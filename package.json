@@ -5,15 +5,28 @@
     "repository": "https://github.com/orvaldo/indecision-app.git",
     "author": "son",
     "license": "MIT",
+    "scripts": {
+        "serve": "live-server public/",
+        "build": "webpack --watch",
+        "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
+    },
     "dependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.4",
         "babel-preset-env": "1.5.2",
         "eslint-plugin-react": "^7.10.0",
-        "flat": "^4.0.0"
+        "flat": "^4.0.0",
+        "live-server": "^1.2.0",
+        "react": "^16.4.1",
+        "react-dom": "^16.4.1",
+        "validator": "^10.4.0",
+        "webpack": "^4.15.0"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
         "babel-preset-react": "^6.24.1",
         "eslint": "^5.0.1",
-        "eslint-config-google": "^0.9.1"
+        "eslint-config-google": "^0.9.1",
+        "webpack-cli": "^3.0.8"
     }
 }
