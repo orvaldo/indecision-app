@@ -5,16 +5,34 @@ import Action from './Action';
 import Header from './Header';
 
 class IndecisionApp extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            options: [],
-        };
-        this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-        this.handlePick = this.handlePick.bind(this);
-        this.handleAddOption = this.handleAddOption.bind(this);
-        this.handleDeleteOption = this.handleDeleteOption.bind(this);
-    }
+    state = {
+        options: [],
+    };
+
+    handleDeleteOptions = () => {
+        this.setState(() => ({options: []}));
+    };
+    handleDeleteOption = (optionToRemove) => {
+        this.setState((prevState) => ({
+            options: prevState.options.filter((option) => {
+                return optionToRemove !== option;
+            }),
+        }));
+    };
+    handlePick = () => {
+        const rand = Math.floor(Math.random() * this.state.options.length);
+        alert(this.state.options[rand]);
+    };
+    handleAddOption = (option) => {
+        if (!option) {
+            return 'Enter a valid value to add item';
+        } else if (this.state.options.indexOf(option) > -1) {
+            return 'This option already exists';
+        }
+        this.setState((prevState) => ({
+            options: prevState.options.concat(option),
+        }));
+    };
     componentDidMount() {
         try {
             const json = localStorage.getItem('options');
@@ -23,7 +41,6 @@ class IndecisionApp extends React.Component {
                 this.setState(() => ({
                     options,
                 }));
-                console.log('fetching data');
             }
         } catch (e) {
             // Do nothing at all
@@ -33,36 +50,10 @@ class IndecisionApp extends React.Component {
         if (prevState.options.length !== this.state.options.length) {
             const json = JSON.stringify(this.state.options);
             localStorage.setItem('options', json);
-            console.log('saving data');
         }
     }
-    componentWillUnmount() {
-        console.log('component will unmount');
-    }
-    handleDeleteOptions() {
-        this.setState(() => ({options: []}));
-    }
-    handleDeleteOption(optionToRemove) {
-        this.setState((prevState) => ({
-            options: prevState.options.filter((option) => {
-                return optionToRemove !== option;
-            }),
-        }));
-    }
-    handlePick() {
-        const rand = Math.floor(Math.random() * this.state.options.length);
-        alert(this.state.options[rand]);
-    }
-    handleAddOption(option) {
-        if (!option) {
-            return 'Enter a valid value to add item';
-        } else if (this.state.options.indexOf(option) > -1) {
-            return 'This option already exists';
-        }
-        this.setState((prevState) => ({
-            options: prevState.options.concat(option),
-        }));
-    }
+    componentWillUnmount() {}
+
     render() {
         const subtitle = 'Put your life in the hands of a computer';
         return (
